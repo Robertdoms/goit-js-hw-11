@@ -1,0 +1,33 @@
+.is-hiden {
+  display: none;
+}
+
+.load-more-container {
+  display: flex;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.load-more {
+  justify-content: center;
+  border-radius: 4px;
+  border: none;
+  background-color: rgb(62, 75, 250);
+  color: white;
+  padding: 6px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  box-shadow: 0 2px rgb(62 75 250 / 100%);
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    border-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.load-more:hover {
+  background: #e8e8e9;
+  color: rgb(62, 75, 250);
+}
