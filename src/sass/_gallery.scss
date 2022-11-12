@@ -5,3 +5,43 @@
 .gallery-container {
   padding-bottom: 20px;
 }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+}
+.card-image {
+  box-sizing: border-box;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform var(--animation-duration) var(--timing-function);
+  border-radius: 4px 4px 0px 0px;
+}
+.photo-card:hover {
+  cursor: zoom-in;
+  transform: scale(1.03);
+}
+
+.info {
+  display: flex;
+  text-align: center;
+  margin: 10px 5px;
+}
+.info-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+}
+.card-link {
+  display: block;
+  text-decoration: none;
+}
