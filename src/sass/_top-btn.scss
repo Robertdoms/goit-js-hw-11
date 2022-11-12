@@ -1,0 +1,55 @@
+.top-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 70px;
+  font-size: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(235, 235, 235);
+  color: rgb(62, 75, 250);
+  padding: 6px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px rgb(62 75 250 / 100%);
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    border-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.top-btn:hover {
+  background: rgb(62, 75, 250);
+  color: rgb(235, 235, 235);
+}
+
+.bot-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 15px;
+  font-size: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(235, 235, 235);
+  color: rgb(62, 75, 250);
+  padding: 6px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px rgb(62 75 250 / 100%);
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    border-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bot-btn:hover {
+  background: rgb(62, 75, 250);
+  color: rgb(235, 235, 235);
+}
