@@ -89,4 +89,63 @@ async function loadMore(e) {
   const data = await PhotosApiServices.fetchPhotos();
   const markup = data.hits.map(item => itemMarkup(item)).join('');
   loadAnimationAction.classList.add('is-hiden');
+
+  renderItem(markup);
+  const totalPages = Math.ceil(data.totalHits / 40);
+  if (photosApiServices.page > totalPages) {
+    SimpleLightbox.refresh();
+    Notify.failure(
+      "We're sorry, but you've reached the end of search results."
+    );
+  }
+}
+
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionDelay: 250,
+  captionsData: 'alt',
+}).refresh();
+
+function renderItem(markup) {
+  btnToTop.classList.remove('is-hiden');
+  btnToBot.classList.remove('is-hiden');
+
+  refs.gallery.insertAdjacentHTML('beforeend', markup);
+
+  lightbox.refresh();
+
+  refs.gallery.addEventListener('click', lightbox);
+}
+
+function itemMarkup({
+  largeImageURL,
+  webformatURL,
+  tags,
+  likes,
+  views,
+  comments,
+  downloads,
+}) {
+  return `
+        <div class="photo-card">
+  <a class="card-link" href="${largeImageURL}"><img class="card-image" src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
+  <div class="info">
+    <p class="info-item">
+      <b>Likes</b>
+      ${likes}
+    </p>
+    <p class="info-item">
+      <b>Views</b>
+      ${views}
+    </p>
+    <p class="info-item">
+      <b>Comments</b>
+      ${comments}
+    </p>
+    <p class="info-item">
+      <b>Downloads</b>
+      ${downloads}
+    </p>
+  </div>
+</div>
+      `;
 }
