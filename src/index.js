@@ -156,6 +156,9 @@ function clearGallety() {
 const btnToTop = document.querySelector('.top-btn');
 const btnToBot = document.querySelector('.bot-btn');
 
+btnToTop.addEventListener('click', onScrollUp);
+btnToBot.addEventListener('click', onScrollDown);
+
 function onScrollUp() {
   const photoCard = document.querySelector('.photo-card');
   const { height: cardHeight } = photoCard.getBoundingClientRect();
