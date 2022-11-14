@@ -152,3 +152,29 @@ function itemMarkup({
 function clearGallety() {
   refs.gallery.innerHTML = '';
 }
+
+const btnToTop = document.querySelector('.top-btn');
+const btnToBot = document.querySelector('.bot-btn');
+
+function onScrollUp() {
+  const photoCard = document.querySelector('.photo-card');
+  const { height: cardHeight } = photoCard.getBoundingClientRect();
+  if (!photoCard) {
+    return;
+  } else {
+    window.scrollBy({ top: -cardHeight * 3, behavior: 'smooth' });
+  }
+}
+
+function onScrollDown() {
+  const photoCard = document.querySelector('.photo-card');
+}
+const { height: cardHeight } = photoCard.getBoundingClientRect();
+if (!photoCard) {
+  return;
+} else {
+  window.scrollBy({
+    top: cardHeight * 3,
+    behavior: 'smooth',
+  });
+}
