@@ -27,14 +27,7 @@ function scrollOptions() {
 }
 
 window.removeEventListener('scroll', scrollOptions);
-// let infScroll = new InfiniteScroll(refs.gallery, {
-//   // options
-//   path: 'photosApiServices.page + 1',
-//   append: '.post',
-//   history: false,
-//   scrollThreshold: 100,
-// });
-// console.log(infScroll);
+
 let timerId = null;
 const photosApiServices = new PhotosApiServices();
 // console.log(photosApiServices.page);
@@ -165,19 +158,22 @@ function onScrollUp() {
   if (!photoCard) {
     return;
   } else {
-    window.scrollBy({ top: -cardHeight * 3, behavior: 'smooth' });
+    window.scrollBy({
+      top: -cardHeight * 3,
+      behavior: 'smooth',
+    });
   }
 }
 
 function onScrollDown() {
   const photoCard = document.querySelector('.photo-card');
-}
-const { height: cardHeight } = photoCard.getBoundingClientRect();
-if (!photoCard) {
-  return;
-} else {
-  window.scrollBy({
-    top: cardHeight * 3,
-    behavior: 'smooth',
-  });
+  const { height: cardHeight } = photoCard.getBoundingClientRect();
+  if (!photoCard) {
+    return;
+  } else {
+    window.scrollBy({
+      top: cardHeight * 3,
+      behavior: 'smooth',
+    });
+  }
 }
