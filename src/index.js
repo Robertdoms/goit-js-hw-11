@@ -149,3 +149,6 @@ function itemMarkup({
 </div>
       `;
 }
+function clearGallety() {
+  refs.gallery.innerHTML = '';
+}
