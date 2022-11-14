@@ -8,6 +8,7 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  // max-width: 1140px;
   justify-content: center;
   padding: 0;
   list-style: none;
@@ -15,6 +16,7 @@
   margin-right: auto;
   padding-top: 50px;
 }
+
 .card-image {
   box-sizing: border-box;
   height: 200px;
@@ -23,6 +25,20 @@
   transition: transform var(--animation-duration) var(--timing-function);
   border-radius: 4px 4px 0px 0px;
 }
+
+.photo-card {
+  display: block;
+  border-radius: 4px;
+  text-decoration: none;
+  min-width: 300px;
+  flex-basis: 20%;
+  margin: 12px;
+  position: relative;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
 .photo-card:hover {
   cursor: zoom-in;
   transform: scale(1.03);
@@ -33,6 +49,7 @@
   text-align: center;
   margin: 10px 5px;
 }
+
 .info-item {
   display: flex;
   flex-direction: column;
@@ -41,40 +58,8 @@
   margin-right: auto;
   font-size: 12px;
 }
+
 .card-link {
   display: block;
   text-decoration: none;
-}
-.is-hiden {
-  display: none;
-}
-
-.load-more-container {
-  display: flex;
-  width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.load-more {
-  justify-content: center;
-  border-radius: 4px;
-  border: none;
-  background-color: rgb(62, 75, 250);
-  color: white;
-  padding: 6px;
-  cursor: pointer;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-  box-shadow: 0 2px rgb(250 116 62 / 100%);
-  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    border-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.load-more:hover {
-  background: #e8e8e9;
-  color: rgb(62, 75, 250);
 }
