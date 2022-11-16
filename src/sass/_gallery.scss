@@ -1,65 +1,75 @@
 :root {
-  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --animation-duration: 250ms;
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-duration: 250ms;
 }
 .gallery-container {
-  padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  // max-width: 1140px;
-  justify-content: center;
-  padding: 0;
-  list-style: none;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    // max-width: 1140px;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+
 }
 
+
+// .card-link:hover {
+//     transform: scale(1.03);
+// }
+
 .card-image {
-  box-sizing: border-box;
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  transition: transform var(--animation-duration) var(--timing-function);
-  border-radius: 4px 4px 0px 0px;
+    box-sizing: border-box;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform var(--animation-duration) var(--timing-function);
+    border-radius: 4px 4px 0px 0px;
 }
 
 .photo-card {
-  display: block;
-  border-radius: 4px;
-  text-decoration: none;
-  min-width: 300px;
-  flex-basis: 20%;
-  margin: 12px;
-  position: relative;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-  transition: transform var(--animation-duration) var(--timing-function);
+    display: block;
+    // object-fit: contain;
+    border-radius: 4px;
+    text-decoration: none;
+    min-width: 300px;
+    flex-basis: 20%;
+    // height: 400px;
+    // width: calc((100% - 4 * 30px) / 4);
+    margin: 12px;
+        position: relative;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+                0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+                transition: transform var(--animation-duration) var(--timing-function);
 }
 
 .photo-card:hover {
-  cursor: zoom-in;
-  transform: scale(1.03);
+    cursor: zoom-in;
+    transform: scale(1.03);
 }
 
 .info {
-  display: flex;
-  text-align: center;
-  margin: 10px 5px;
+    display: flex;
+    text-align: center;
+    margin: 10px 5px;
+    
 }
 
 .info-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
 }
 
 .card-link {
-  display: block;
-  text-decoration: none;
+    display: block;
+    text-decoration: none;
 }
