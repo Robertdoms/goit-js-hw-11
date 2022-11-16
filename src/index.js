@@ -77,21 +77,21 @@ async function onBtnSubmit(e) {
     return Notify.warning('input field cannot be empty.');
   } else {
     renderItem(markup);
-    // loadAnimationAction.classList.add('is-hiden');
-    // setTimeout(renderItem(markup), 2000);
+    loadAnimationAction.classList.add('is-hiden');
+    setTimeout(renderItem(markup), 2000);
 
     Notify.success(`Hooray! We found ${data.totalHits} images.`);
     document;
   }
-  //   if else (page > totalHits) {
-  //       Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.")
-  //   }
+  // if else (page > totalHits) {
+  //     Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.")
+  // }
 }
 
-// refs.loadMoreBtn.addEventListener('click', loadMore);
+refs.loadMoreBtn.addEventListener('click', loadMore);
 
 async function loadMore(e) {
-  //   e.preventDefault();
+  e.preventDefault();
   //   console.log(photosApiServices.page);
   loadAnimationAction.classList.remove('is-hiden');
   const data = await photosApiServices.fetchPhotos();
