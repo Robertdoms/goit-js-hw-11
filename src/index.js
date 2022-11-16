@@ -214,35 +214,3 @@ function onScrollDown() {
     });
   }
 }
-// loadAnimation();
-// function loadAnimation() {
-
-//   timerId = setTimeout(() => {
-//     console.log('lets party started');
-//     loadAnimationAction.classList.remove('.is-hiden');
-//   }, 1000);
-// }
-// function checkScrollDirection(event) {
-//   const { height: cardHeight } = document
-//     .querySelector('.galllery')
-//     .document.querySelector('.photo-card')
-//     .getBoundingClientRect();
-//   if (checkScrollDirectionIsUp(event)) {
-//     window.scrollBy({
-//       down: cardHeight * 2,
-//       behavior: 'smooth',
-//     });
-//     console.log('UP');
-//   } else {
-//     window.scrollBy({
-//       down: -cardHeight * 2,
-//       behavior: 'smooth',
-//     });
-//   }
-// }
-// function checkScrollDirectionIsUp(event) {
-//   if (event.wheelDelta) {
-//     return event.wheelDelta > 0;
-//   }
-//   return event.deltaY < 0;
-// }
