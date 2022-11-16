@@ -111,17 +111,17 @@ async function loadMore(e) {
   }
 }
 
-// let infScroll = new InfiniteScroll(refs.gallery, {
-//   // options
-//   path: photosApiServices.page,
-//   append: '.post',
-//   history: false,
-// });
+let infScroll = new InfiniteScroll(refs.gallery, {
+  // options
+  path: photosApiServices.page,
+  append: '.post',
+  history: false,
+});
 
-// console.log(infScroll);
+console.log(infScroll);
 
-// function photoApiFetch() {}
-// refs.gallery.addEventListener('beforeend', markup)
+function photoApiFetch() {}
+refs.gallery.addEventListener('beforeend', markup);
 const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
   captionsData: 'alt',
