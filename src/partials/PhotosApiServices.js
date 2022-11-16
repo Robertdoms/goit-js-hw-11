@@ -17,15 +17,21 @@ export default class PhotosApiServices {
       page: this.page,
       per_page: 40,
     };
+
     const url = `${BASE_URL}?key=${options.key}&q=${this.searchQuery}&image_type=${options.image_type}&orientation=${options.orientation}&safesearch=${options.safesearch}&page=${this.page}&per_page=${options.per_page}`;
 
     return await axios
       .get(url, options)
       .then(resp => {
         this.page += 1;
+
+        //   console.log(resp.data);
         return resp.data;
       })
-      .catch(Error => console.log(Error));
+      //   .then(r => {
+      //     this.page += 1;
+      //   })
+      .catch(error => console.log(error));
   }
 
   resetPage() {
