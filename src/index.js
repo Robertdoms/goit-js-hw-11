@@ -131,14 +131,14 @@ function renderItem(markup) {
   btnToTop.classList.remove('is-hiden');
   btnToBot.classList.remove('is-hiden');
 
-  //   loadAnimationAction.classList.remove('is-hiden');
-  //   setTimeout(() => {
-  //     loadAnimationAction.classList.add('is-hiden');
-  //   }, 2000);
-  //   refs.loadMoreBtn.classList.remove('is-hiden');
+  loadAnimationAction.classList.remove('is-hiden');
+  setTimeout(() => {
+    loadAnimationAction.classList.add('is-hiden');
+  }, 2000);
+  refs.loadMoreBtn.classList.remove('is-hiden');
 
   refs.gallery.insertAdjacentHTML('beforeend', markup);
-  //   loadAnimationAction.classList.add('is-hiden');
+  loadAnimationAction.classList.add('is-hiden');
   lightbox.refresh();
   //   lightbox.refresh();
 
