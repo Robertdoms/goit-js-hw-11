@@ -111,17 +111,17 @@ async function loadMore(e) {
   }
 }
 
-let infScroll = new InfiniteScroll(refs.gallery, {
-  // options
-  path: photosApiServices.page,
-  append: '.post',
-  history: false,
-});
+// let infScroll = new InfiniteScroll(refs.gallery, {
+//   // options
+//   path: photosApiServices.page,
+//   append: '.post',
+//   history: false,
+// });
 
-console.log(infScroll);
+// console.log(infScroll);
 
-function photoApiFetch() {}
-refs.gallery.addEventListener('beforeend', markup);
+// function photoApiFetch() {}
+// refs.gallery.addEventListener('beforeend', markup)
 const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
   captionsData: 'alt',
@@ -214,3 +214,35 @@ function onScrollDown() {
     });
   }
 }
+// loadAnimation();
+// function loadAnimation() {
+
+//   timerId = setTimeout(() => {
+//     console.log('lets party started');
+//     loadAnimationAction.classList.remove('.is-hiden');
+//   }, 1000);
+// }
+// function checkScrollDirection(event) {
+//   const { height: cardHeight } = document
+//     .querySelector('.galllery')
+//     .document.querySelector('.photo-card')
+//     .getBoundingClientRect();
+//   if (checkScrollDirectionIsUp(event)) {
+//     window.scrollBy({
+//       down: cardHeight * 2,
+//       behavior: 'smooth',
+//     });
+//     console.log('UP');
+//   } else {
+//     window.scrollBy({
+//       down: -cardHeight * 2,
+//       behavior: 'smooth',
+//     });
+//   }
+// }
+// function checkScrollDirectionIsUp(event) {
+//   if (event.wheelDelta) {
+//     return event.wheelDelta > 0;
+//   }
+//   return event.deltaY < 0;
+// }
