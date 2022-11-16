@@ -19,19 +19,24 @@ function scrollOptions() {
 
   //   console.log({ scrollTop, scrollHeight, clientHeight });
 
-  if (clientHeight + scrollTop >= scrollHeight + 5) {
+  if (clientHeight + scrollTop >= scrollHeight - 5) {
     // show the loading animation
     console.log('end of scroll');
     loadMore();
   }
 }
-
 window.removeEventListener('scroll', scrollOptions);
-
+// let infScroll = new InfiniteScroll(refs.gallery, {
+//   // options
+//   path: 'photosApiServices.page + 1',
+//   append: '.post',
+//   history: false,
+//   scrollThreshold: 100,
+// });
+// console.log(infScroll);
 let timerId = null;
 const photosApiServices = new PhotosApiServices();
 // console.log(photosApiServices.page);
-
 const refs = {
   gallery: document.querySelector('.gallery'),
   form: document.querySelector('.search-form'),
@@ -56,10 +61,11 @@ async function onBtnSubmit(e) {
   const markup = data.hits.map(item => itemMarkup(item)).join('');
   loadAnimationAction.classList.add('is-hiden');
 
-  console.log(data);
+  // console.log(data);
   if (data.total === 0) {
     btnToTop.classList.add('is-hiden');
     btnToBot.classList.add('is-hiden');
+    // refs.loadMoreBtn.classList.add('is-hiden');
     return Notify.warning(
       'Sorry, there are no images matching your search query. Please try again.'
     );
@@ -67,32 +73,55 @@ async function onBtnSubmit(e) {
   if (photosApiServices.query === '' || photosApiServices.query === ' ') {
     btnToTop.classList.add('is-hiden');
     btnToBot.classList.add('is-hiden');
-
+    // refs.loadMoreBtn.classList.add('is-hiden');
     return Notify.warning('input field cannot be empty.');
   } else {
     renderItem(markup);
+    // loadAnimationAction.classList.add('is-hiden');
+    // setTimeout(renderItem(markup), 2000);
 
     Notify.success(`Hooray! We found ${data.totalHits} images.`);
     document;
   }
+  //   if else (page > totalHits) {
+  //       Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.")
+  //   }
 }
 
+// refs.loadMoreBtn.addEventListener('click', loadMore);
+
 async function loadMore(e) {
+  //   e.preventDefault();
+  //   console.log(photosApiServices.page);
   loadAnimationAction.classList.remove('is-hiden');
-  const data = await PhotosApiServices.fetchPhotos();
+  const data = await photosApiServices.fetchPhotos();
   const markup = data.hits.map(item => itemMarkup(item)).join('');
   loadAnimationAction.classList.add('is-hiden');
 
   renderItem(markup);
   const totalPages = Math.ceil(data.totalHits / 40);
+  //   console.log(totalPages);
+  //   console.log(data);
   if (photosApiServices.page > totalPages) {
-    SimpleLightbox.refresh();
+    // refs.loadMoreBtn.classList.add('is-hiden');
+    lightbox.refresh();
     Notify.failure(
       "We're sorry, but you've reached the end of search results."
     );
   }
 }
 
+// let infScroll = new InfiniteScroll(refs.gallery, {
+//   // options
+//   path: photosApiServices.page,
+//   append: '.post',
+//   history: false,
+// });
+
+// console.log(infScroll);
+
+// function photoApiFetch() {}
+// refs.gallery.addEventListener('beforeend', markup)
 const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
   captionsData: 'alt',
@@ -102,13 +131,21 @@ function renderItem(markup) {
   btnToTop.classList.remove('is-hiden');
   btnToBot.classList.remove('is-hiden');
 
-  refs.gallery.insertAdjacentHTML('beforeend', markup);
+  //   loadAnimationAction.classList.remove('is-hiden');
+  //   setTimeout(() => {
+  //     loadAnimationAction.classList.add('is-hiden');
+  //   }, 2000);
+  //   refs.loadMoreBtn.classList.remove('is-hiden');
 
+  refs.gallery.insertAdjacentHTML('beforeend', markup);
+  //   loadAnimationAction.classList.add('is-hiden');
   lightbox.refresh();
+  //   lightbox.refresh();
 
   refs.gallery.addEventListener('click', lightbox);
 }
-
+// largeImageURL
+// webformatURL;
 function itemMarkup({
   largeImageURL,
   webformatURL,
@@ -177,3 +214,35 @@ function onScrollDown() {
     });
   }
 }
+// loadAnimation();
+// function loadAnimation() {
+
+//   timerId = setTimeout(() => {
+//     console.log('lets party started');
+//     loadAnimationAction.classList.remove('.is-hiden');
+//   }, 1000);
+// }
+// function checkScrollDirection(event) {
+//   const { height: cardHeight } = document
+//     .querySelector('.galllery')
+//     .document.querySelector('.photo-card')
+//     .getBoundingClientRect();
+//   if (checkScrollDirectionIsUp(event)) {
+//     window.scrollBy({
+//       down: cardHeight * 2,
+//       behavior: 'smooth',
+//     });
+//     console.log('UP');
+//   } else {
+//     window.scrollBy({
+//       down: -cardHeight * 2,
+//       behavior: 'smooth',
+//     });
+//   }
+// }
+// function checkScrollDirectionIsUp(event) {
+//   if (event.wheelDelta) {
+//     return event.wheelDelta > 0;
+//   }
+//   return event.deltaY < 0;
+// }
