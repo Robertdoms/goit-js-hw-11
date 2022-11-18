@@ -27,7 +27,6 @@ function scrollOptions() {
 }
 window.removeEventListener('scroll', scrollOptions);
 let infScroll = new InfiniteScroll(refs.gallery, {
-  // options
   path: 'photosApiServices.page + 1',
   append: '.post',
   history: false,
